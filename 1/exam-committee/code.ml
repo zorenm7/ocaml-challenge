@@ -1,20 +1,12 @@
-type vote = StrongReject | WeakReject | WeakAccept | StrongAccept
+type vote = StrongAccept | StrongReject | WeakAccept | WeakReject
 
-let decide_exam v1 v2 v3 = 
-  let is_accept v = 
-    match v with
-    | WeakAccept | StrongAccept -> true
-    | WeakReject | StrongReject -> false
-  in
-  let count_accept =
-    (if is_accept v1 then 1 else 0) +
-    (if is_accept v2 then 1 else 0) +
-    (if is_accept v3 then 1 else 0)
-  in
-  let has_strong_reject =
-    match v1, v2, v3 with
-    | StrongReject, _, _ | _, StrongReject, _ | _, _, StrongReject -> true
-    | _ -> false
-  in
-  count_accept >= 2 && not has_strong_reject
-;;
+let rejected a = match a with
+| StrongReject -> true
+| _ -> false;;
+
+let decide_exam a b c = match (a, b, c) with
+| _ when rejected a || rejected b || rejected c -> false
+| (WeakReject, WeakReject, _) -> false
+| (WeakReject, _, WeakReject) -> false
+| (_, WeakReject, WeakReject) -> false
+| _ -> true;;
