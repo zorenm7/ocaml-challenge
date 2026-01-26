@@ -1,9 +1,5 @@
-let seven_eleven_doubles () =
-  let d1 = Random.int 6 + 1 in
-  let d2 = Random.int 6 + 1 in
-  let b = (d1 + d2 = 7) || (d1 + d2 = 11) || (d1 = d2) in
-  (b, d1, d2);;
-
-Random.self_init;;
-
-seven_eleven_doubles;; 
+let seven_eleven_doubles = 
+  let random1 = Random.int(6) + 1 in 
+  let random2 = Random.int(6) + 1 in 
+  if ((random1 + random2) = 7 || (random1 + random2) = 11) || random1 = random2 then (true, random1, random2) else (false, random1, random2)
+;;
