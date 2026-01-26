@@ -4,7 +4,7 @@ Write a function with the following type:
 ```ocaml
 is_even : int -> bool
 ```
-such that ``is_even x`` is true iff x is even. *Bonus*: do not use the if-then-else construct.
+such that ``is_even x`` is true if x is even. *Bonus*: do not use the if-then-else construct.
 
 Now, consider a simple game between two players, say A and B, with the following rules:
 - A and B choose a number between 1 and 5 (any other number is considered incorrect);
