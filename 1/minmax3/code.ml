@@ -1,7 +1,4 @@
-let minmax3 a b c = 
-  let min = if a < b then (if a < c then a else c)
-              else (if b < c then b else c) in 
-  let max = if a > b then (if a > c then a else c)
-              else (if b > c then b else c) in (min, max);;
-  
-  minmax3 1 2 3;;
+let min2 a b = if a > b then b else a;;
+let max2 a b = if a > b then a else b;;
+
+let minmax3 a b c = (min2 (min2 a b) c, max2 (max2 a b) c);;
