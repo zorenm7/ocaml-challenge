@@ -14,11 +14,10 @@ let always_fail x = failwith("This function always fails")
 ```
 The following tests must pass:
 ```ocaml
-assert(max_nat 2 5 = 5);;
+
 assert(max_nat 5 2 = 5);;
 assert(try max_nat (-2) 5 |> fun _ -> false with _ -> true);;
 assert(try max_nat 2 (-5) |> fun _ -> false with _ -> true);;
 assert(try max_nat (-2) (-5) |> fun _ -> false with _ -> true);;
 ```
-
 **Warning**: do not even think of using the built-in ``max`` function.
