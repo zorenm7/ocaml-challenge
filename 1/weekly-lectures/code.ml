@@ -1,6 +1,6 @@
-type weekday = Mo | Tu | We | Th | Fr
+type weekday = Mo | Tu | We | Th | Fr;;
 
-type course = ALF | LIP
+type course = ALF | LIP;;
 
 let isLecture d c = 
   match c, d with
