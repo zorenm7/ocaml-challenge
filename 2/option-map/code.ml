@@ -1,4 +1,3 @@
-let option_map f option = 
-  match option with
-  | Some x -> Some (f x)
-  | None -> None;;
+let option_map f x = match x with
+| None -> None
+| Some x -> Some (f x);;
