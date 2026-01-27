@@ -1,39 +1,41 @@
-let f1 x = x mod 2 = 0;;
+let f1 x = x > 0;;
 
-let f2 a = if a then 0 else 1;;
+let f2 x = if x then 1 else 0;;
 
-let f3 a = (a, a mod 2 = 0);;
+let f3 x = (x, x >= 0);;
 
-let f4 (a, b) = if a > 0 && b = true then 0 else 1;;
+let f4 (x, y) = if y then x + 1 else x;;
 
-let f5 a = fun b -> if a + b > 0 then 1 else 0;;
+let f5 x = fun f -> x+f;;
 
-let f6 a = fun b -> a mod b = 0;;
+let f6 x = fun f -> x + f > 0;;
 
-let f7 a = fun b -> if b mod 2 = 0 && a then a else a;;
+let f7 x = fun f -> if x || f >= 0 then true else false;;
 
-let f8 a = fun b -> if a && b then 1 else 0;;
+let f8 x = fun f -> if x || f then 1 else 0;;
 
-let f9 a = fun b -> if a then 1 else b;;
+let f9 x = fun f -> if x || f >= 0 then 1 else 0;;
 
-let f10 a b = a + b;;
+let f10 f = (f 0) + 1;;
 
-let f11 f = if f 0 then 0 else 1;;
+let f11 f = if (f 0) then 1 else 0;;
 
-let f12 f = (f true) + (f false);;
+let f12 f = (f true) + 1;;
 
-let f13 f = if f 0 then true else false;;
+let f13 f = if (f 0) then true else false;;
 
-let f14 f = if (f true) && (f false) then 1 else 0;;
+let f14 f = if (f true) then 1 else 0;;
 
-let f15 x (a, b) = x + a + b;; 
+let f15 x (y, z) = x + y + z;;
 
-let f16 a = fun b -> fun c -> a + b + c;;
+let f16 x = fun f -> fun g -> x + f + g;;
 
-let f17 f = fun x -> x + f 0;; 
+let f17 f = if f 0 >= 0 then f else f;;
 
 let f18 f = f (fun x -> x + 1) + 1;;
 
-let f19 f = fun x -> if x then f 1 > 0 else f 0 > 0;;
+let f19 f = fun g -> if f 0 > 0 then g true;;
 
-let f20 f = fun b -> if b then (if f 1 then 1 else 0) else (if f 0 then 1 else 0);;
+let f19 f = fun g -> if f 0 > 0 then g else not g;;
+
+let f20 f = fun g -> if f 0 then if g then 1 else 0 else if g then 1 else 0;;
