@@ -1,1 +1,1 @@
-let flip f x y = f y x;;
+let flip f a b = f b a ;;
