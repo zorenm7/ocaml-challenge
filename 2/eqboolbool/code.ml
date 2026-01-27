@@ -1,0 +1,1 @@
+let (=?) f g  = f true = g true && f false = g false;;
