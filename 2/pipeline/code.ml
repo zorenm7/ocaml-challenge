@@ -1,1 +1,1 @@
-let (|>) x f = f x;;
+let (|>) x f = f x ;;

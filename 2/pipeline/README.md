@@ -7,7 +7,7 @@ For example, given the functions:
 let double x = x * 2;;
 let square x = x * x;;
 ```
-the pipe operator must enojoy the following equalities:
+the pipe operator must enjoy the following equalities:
 ```ocaml
 3 |> double = double 3
 3 |> double |> square = square (double 3) 
