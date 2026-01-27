@@ -1,6 +1,8 @@
-let tris (a, b, c, d) = 
-  if (a = b && a = c) || (a = b && a = d) || (a = c && a = d) || (b = c && b = d) then true else false;;
+let hand = (Random.int(10) + 1, Random.int(10) + 1, Random.int(10) + 1, Random.int(10) + 1);;
 
-let hand () =
-  let rand_int () = Random.int 10 + 1 in
-  (rand_int (), rand_int (), rand_int (), rand_int ());;
+let tris (a, b, c, d) = match (a, b, c, d) with
+| _ when (a = b && a = c) -> true
+| _ when (a = b && a = d) -> true
+| _ when (b = c && b = d) -> true
+| _ when (a = c && a = d) -> true
+| _ -> false;;
