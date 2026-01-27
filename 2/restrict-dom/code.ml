@@ -1,2 +1,1 @@
-let restrict f p = fun x -> 
-  if p x then Some (f x) else None;;
+let restrict f p x = if p x then Some (f x) else None;;
