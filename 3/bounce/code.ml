@@ -1,0 +1,1 @@
+let bounce n x = if x mod (2*n) <= n then x mod (2*n) else 2*n - x mod (2*n);;
